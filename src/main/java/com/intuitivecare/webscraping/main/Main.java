@@ -10,7 +10,7 @@ import java.util.List;
 public class Main {
     public static void main(String[] args) {
         try {
-            // 1️⃣ Buscar links dos PDFs
+
             List<String> pdfLinks = Scraper.getPdfLinks();
 
             if (pdfLinks.isEmpty()) {
@@ -18,10 +18,10 @@ public class Main {
                 return;
             }
 
-            // 2️⃣ Baixar os arquivos
+
             Downloader.downloadFiles(pdfLinks);
 
-            // 3️⃣ Compactar os arquivos
+
             Zipper.zipFiles();
 
             System.out.println("Processo concluído com sucesso!");

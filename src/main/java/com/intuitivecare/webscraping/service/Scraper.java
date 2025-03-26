@@ -21,7 +21,7 @@ public class Scraper {
             String fileUrl = link.absUrl("href"); // Captura o link completo
             String linkText = link.text(); // Captura o texto visível no link
 
-            // Verifica se o link é um PDF e se o texto contém "Anexo I" ou "Anexo II"
+
             if (fileUrl.toLowerCase().endsWith(".pdf") &&
                     (linkText.contains("Anexo I") || linkText.contains("Anexo II"))) {
                 pdfLinks.add(fileUrl); // Adiciona o link se passar no filtro
