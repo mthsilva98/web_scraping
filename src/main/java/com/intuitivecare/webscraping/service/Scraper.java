@@ -18,13 +18,13 @@ public class Scraper {
         Elements links = doc.select("a[href]");
 
         for (Element link : links) {
-            String fileUrl = link.absUrl("href"); // Captura o link completo
-            String linkText = link.text(); // Captura o texto visível no link
+            String fileUrl = link.absUrl("href");
+            String linkText = link.text();
 
 
             if (fileUrl.toLowerCase().endsWith(".pdf") &&
                     (linkText.contains("Anexo I") || linkText.contains("Anexo II"))) {
-                pdfLinks.add(fileUrl); // Adiciona o link se passar no filtro
+                pdfLinks.add(fileUrl);
             }
         }
         return pdfLinks;
